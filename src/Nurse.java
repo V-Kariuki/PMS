@@ -4,14 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
-
-public class Doctor extends Staff {
-    private String Speciality;
+public class Nurse extends Staff {
     private String Ward_No;
-    public Doctor(int _docid,String _FirstName, String _MiddleName, String _LastName, String _Speciality, String _Ward_No) throws ParseException{
-        Doctor Daktari = new Doctor(1001,"Tom","Med","Tibu","General Practitioner","General Ward");
-        Staff_id = _docid;
-        Speciality = _Speciality;
+    public Nurse(int _Nurseid,String _FirstName, String _MiddleName, String _LastName, String _Ward_No) throws ParseException{
+        Nurse Nesi = new Nurse(1001,"Tom","Med","Tibu","General Ward");
+        Staff_id = _Nurseid;
         Ward_No = _Ward_No;
         First_Name = _FirstName;
         Middle_Name = _MiddleName;
@@ -26,9 +23,7 @@ public class Doctor extends Staff {
         Employment_Date = new SimpleDateFormat("dd-MM-yyyy").parse(empdate);
         return Employment_Date; 
     }
-    interface serviceAppointment{
-        public void treatPatient();
-        public void giveprescription();
+    interface attendPatient{
+        public void administermeds();
     }
-
 }
